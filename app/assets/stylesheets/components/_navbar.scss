@@ -1,12 +1,25 @@
-.navbar-lewagon {
+#navbar {
+  background-color: #e1efee;
+  height: 65px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  border-bottom: 5px solid #e1efee;
+  font-family: "Arial";
+  padding: 25px 25px 25px 55px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+#navbar a {
+  text-decoration: none;
+  color: rgb(16, 178 ,37);
+  opacity: 0.8;
+  &:hover {
+    opacity: 1;
+    color: red;
+  }
+  font-size: 20px;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#new_cocktail {
+  font-size: 20px;
 }
