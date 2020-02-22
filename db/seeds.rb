@@ -17,7 +17,7 @@ ingredient_list = JSON.parse(ingredient_serialized)
 ingredient = ingredient_list['drinks']
 
 ingredient.each do |ing|
-  Ingredient.create(name: ing['strIngredient1'])
+  Ingredient.create!(name: ing['strIngredient1'])
 end
 
 url = 'http://www.thecocktaildb.com/api/json/v1/1/filter.php?a=Alcoholic'
@@ -25,5 +25,5 @@ cocktails_serialized = open(url).read
 cocktails = JSON.parse(cocktails_serialized)
 
 cocktails['drinks'].each do |cocktail|
-  Cocktail.create(name: cocktail['strDrink'])
+  Cocktail.create(name: cocktail['strDrink'], photo: cocktail['strDrinkThumb'])
 end

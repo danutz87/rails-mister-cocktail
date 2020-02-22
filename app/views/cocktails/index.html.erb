@@ -1,21 +1,20 @@
 <%= render "banner" %>
 
-<div class="index-wrapper">
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
       <% if @cocktails.count >= 1 %>
         <% @cocktails.each do |cocktail| %>
           <div class="col-xs-12 col-sm-6 col-md-4">
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))">
-              <div class="card-description">
-                <h2><%= cocktail.name %></h2>
-                </p>
+            <div class="card">
+              <%= link_to cl_image_tag(cocktail.photo, height: 300, width: 450), cocktail_path(cocktail)%>
+              <div class="card-img-overlay">
+              <div class="card-name text-center">
+                <h2><%= link_to cocktail.name, cocktail_path(cocktail) %></h2>
               </div>
-              <a class="card-link" href=<%= cocktail_path(cocktail) %>></a>
             </div>
           </div>
+        </div>
         <% end %>
       <% end %>
     </div>
   </div>
-</div>
